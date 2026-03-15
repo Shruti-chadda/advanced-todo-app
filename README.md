@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 📝 Advanced To-Do App (Python + Tkinter)
 
 ## 📌 Project Overview
@@ -32,3 +33,7 @@ This project demonstrates concepts such as GUI development, file handling, sorti
 ---
 
 ## 📂 Project Structure
+=======
+# advanced-todo-app
+A GUI-based Advanced To-Do List Application built with Python and Tkinter featuring due dates, priority levels, sorting, and file storage.
+>>>>>>> cd7d886d9dbd7a9c5238ddf1ae18aad6a264a806
