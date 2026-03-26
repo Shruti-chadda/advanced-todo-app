@@ -194,6 +194,7 @@ def apply_theme():
     add_btn.config(bg=theme["PRIMARY"], fg="white")
     complete_btn.config(bg=theme["SUCCESS"], fg="#1A1A1A")
     delete_btn.config(bg=theme["SECONDARY"], fg="#1A1A1A")
+    suggest_btn.config(bg=theme["PRIMARY"], fg="white")
 
 
 # ---------- TOGGLE THEME ----------
@@ -212,6 +213,29 @@ def toggle_theme():
 
     apply_theme()
     refresh_tasks()
+
+def suggest_schedule():
+
+    if not tasks:
+        messagebox.showinfo("Info", "No tasks available")
+        return
+
+    priority_order = {"High": 1, "Medium": 2, "Low": 3}
+
+    sorted_tasks = sorted(
+        tasks,
+        key=lambda x: (
+            priority_order[x["priority"]],
+            datetime.strptime(x["due"], "%d-%m-%Y")
+        )
+    )
+
+    result = "✨ Suggested Plan for Your Day:\n\n"
+
+    for i, task in enumerate(sorted_tasks, 1):
+        result += f"{i}. {task['task']} ({task['priority']} - {task['due']})\n"
+
+    messagebox.showinfo("AI Task Assistant", result)
 
 
 # ---------- WINDOW ----------
@@ -281,6 +305,16 @@ add_btn.grid(row=0, column=0, padx=10)
 complete_btn.grid(row=0, column=1, padx=10)
 delete_btn.grid(row=0, column=2, padx=10)
 
+suggest_btn = tk.Button(
+    root,
+    text="✨ Suggest My Day",
+    command=suggest_schedule,
+    font=("Segoe UI", 11),
+    padx=10,
+    pady=5
+)
+
+suggest_btn.pack(pady=10)
 
 # ---------- TASK AREA ----------
 task_area = tk.Frame(root, bg=theme["BACKGROUND"])
