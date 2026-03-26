@@ -97,8 +97,10 @@ python todo_gui.py
 ---
 
 ## 📷 App Preview
-(Add screenshot here)
+<img width="1239" height="1014" alt="Screenshot 2026-03-27 002254" src="https://github.com/user-attachments/assets/413b4b5f-783c-4bde-a08c-10724d111e98" />
 
+
+<img width="1245" height="1005" alt="image" src="https://github.com/user-attachments/assets/fcdd2dfd-9840-40ba-9101-0bea2090cce6" />
 
 
 ---
